@@ -1,5 +1,7 @@
 import express, { request, response } from "express";
 
+import "./database";
+
 const app = express()
 
 app.listen(3090, () => console.log("App running with sucess ✌️"))
