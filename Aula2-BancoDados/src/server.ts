@@ -2,7 +2,13 @@ import express, { request, response } from "express";
 
 import "./database";
 
+import { routes } from "./routes";
+
 const app = express()
+
+app.use(express.json());
+
+app.use(routes);
 
 app.listen(3090, () => console.log("App running with sucess ✌️"))
 
@@ -13,22 +19,4 @@ app.listen(3090, () => console.log("App running with sucess ✌️"))
     ° 3 -> PUT : Altera informação
     ° 4 -> DELETE : Deleta informação
     ° 5 -> PATCH : Altera informação ESPECÍFICA
-*/
-
-app.get("/", (request, response) => {
-    return response.send("Oi Gente do NLW#05")
-});
-
-/*
-    O código abaixo não funciona, será necessário utilizar outro
-programa para poder usar o método POST, por exemplo :
-
-    ° insomnia : https://insomnia.rest/
-    ° postman : https://www.postman.com/
-
-app.post("/msg", (request, response) => {
-    return response.json({
-        message : "Rota inativa por enquanto"
-    })
-});
 */
