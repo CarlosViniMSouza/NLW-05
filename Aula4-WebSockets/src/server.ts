@@ -1,16 +1,7 @@
-import express, { request, response } from "express";
+import { http } from "./http";
+import "./websocket/client";
 
-import "./database";
-
-import { routes } from "./routes";
-
-const app = express()
-
-app.use(express.json());
-
-app.use(routes);
-
-app.listen(3090, () => console.log("App running with sucess ✌️"))
+http.listen(3090, () => console.log("App running with sucess ✌️"))
 
 /*
     Metodos de busca:
